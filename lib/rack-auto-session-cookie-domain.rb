@@ -1,6 +1,5 @@
 require "rack-auto-session-cookie-domain/version"
 require 'domainatrix'
-require 'json'
 
 module Rack
   class AutoSessionCookieDomain
