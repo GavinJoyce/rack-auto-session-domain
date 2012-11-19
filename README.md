@@ -11,9 +11,10 @@ This is handy if you want your rack app to serve multiple domains and have acces
 - auth.domain1.com
 - billing.domain1.com
 
+and..
 
 - www.domain2.co.uk
 - auth.domain2.co.uk
 - billing.domain2.co.uk
 
-The session cookies will now be accessible across all subdomains on *.domain1.com and *.domain2.co.uk respectively.
+The session cookies will now automatically be accessible across all subdomains on *.domain1.com and *.domain2.co.uk respectively.
