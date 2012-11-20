@@ -5,7 +5,7 @@ require 'rack-auto-session-domain/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "rack-auto-session-domain"
-  gem.version       = Rack::AutoSessionCookieDomain::VERSION
+  gem.version       = Rack::AutoSessionDomain::VERSION
   gem.authors       = ["Gavin Joyce"]
   gem.email         = ["gavinjoyce@gmail.com"]
   gem.description   = "Automatically sets the rack session domain to the current request domain"
