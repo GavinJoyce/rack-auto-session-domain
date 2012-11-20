@@ -1,8 +1,8 @@
-require "rack-auto-session-cookie-domain/version"
+require "rack-auto-session-domain/version"
 require 'domainatrix'
 
 module Rack
-  class AutoSessionCookieDomain
+  class AutoSessionDomain
     def initialize(app)
       @app = app
     end

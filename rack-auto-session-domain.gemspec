@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rack-auto-session-cookie-domain/version'
+require 'rack-auto-session-domain/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "rack-auto-session-cookie-domain"
+  gem.name          = "rack-auto-session-domain"
   gem.version       = Rack::AutoSessionCookieDomain::VERSION
   gem.authors       = ["Gavin Joyce"]
   gem.email         = ["gavinjoyce@gmail.com"]
   gem.description   = "Automatically sets the rack session domain to the current request domain"
   gem.summary       = "Automatically sets the rack session domain to the current request domain"
-  gem.homepage      = "https://github.com/GavinJoyce/rack-auto-session-cookie-domain"
+  gem.homepage      = "https://github.com/GavinJoyce/rack-auto-session-domain"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

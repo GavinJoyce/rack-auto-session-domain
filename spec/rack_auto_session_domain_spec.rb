@@ -1,17 +1,17 @@
 require 'rspec'
 require 'rack/test'
-require 'rack-auto-session-cookie-domain'
+require 'rack-auto-session-domain'
 
 RSpec.configure do |config|
   config.color_enabled = true
   config.formatter     = 'documentation'
 end
 
-describe Rack::AutoSessionCookieDomain do
+describe Rack::AutoSessionDomain do
   include Rack::Test::Methods
 
   let(:app) { 
-    Rack::AutoSessionCookieDomain.new(
+    Rack::AutoSessionDomain.new(
       lambda { |env| [200, {'Content-Type' => 'text/plain'}, 'hello there'] }
     )
   }

@@ -1,4 +1,4 @@
-rack-auto-session-cookie-domain
+rack-auto-session-domain
 ===============================
 
 This rack middleware automatically sets the rack session domain to the current domain.
@@ -18,3 +18,7 @@ and..
 - billing.domain2.co.uk
 
 The session cookies will now automatically be accessible across all subdomains on *.domain1.com and *.domain2.co.uk respectively.
+
+## Source
+
+https://github.com/GavinJoyce/rack-auto-session-domain
