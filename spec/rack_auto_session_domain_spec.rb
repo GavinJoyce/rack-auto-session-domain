@@ -16,50 +16,50 @@ describe Rack::AutoSessionDomain do
     )
   }
 
-  it "should return a valid response" do
+  it "returns a valid response" do
     get '/'
     last_response.should be_ok
     last_response.body.should == 'hello there'
   end
   
-  it "should ignore the subdomain" do
+  it "ignores the subdomain" do
     get 'http://www.incremental.ie/apps'
     session_domain_from(last_request).should == 'incremental.ie'
   end
   
-  it "should ignore multiple subdomains" do
+  it "ignores multiple subdomains" do
     get 'http://ballinteer.dublin.incremental.ie/apps'
-    last_request.env["rack.session.options"][:domain].should == 'incremental.ie'
+    session_domain_from(last_request).should == 'incremental.ie'
   end
   
-  it "should set the session domain when there is no subdomain" do
+  it "sets the session domain when there is no subdomain" do
     get 'http://incremental.ie/apps'
-    last_request.env["rack.session.options"][:domain].should == 'incremental.ie'
+    session_domain_from(last_request).should == 'incremental.ie'
   end
   
-  it "should ignore request port" do
+  it "ignores request port" do
     get 'http://incremental.ie:8080/apps'
-    last_request.env["rack.session.options"][:domain].should == 'incremental.ie'
+    session_domain_from(last_request).should == 'incremental.ie'
   end
   
-  it "should ignore protocol" do
+  it "ignores protocol" do
     get 'https://www.incremental.ie/apps'
-    last_request.env["rack.session.options"][:domain].should == 'incremental.ie'
+    session_domain_from(last_request).should == 'incremental.ie'
   end
   
-  it "should work with country code second level domains" do
+  it "works with country code second level domains" do
     get 'http://www.bbc.co.uk/sport/0/'
-    last_request.env["rack.session.options"][:domain].should == 'bbc.co.uk'
+    session_domain_from(last_request).should == 'bbc.co.uk'
   end
   
-  it "should ignore localhost" do
+  it "ignores localhost" do
     get 'http://localhost/apps'
-    last_request.env["rack.session.options"][:domain].should == nil
+    session_domain_from(last_request).should == nil
   end
   
-  it "should ignore ip addresses" do
+  it "ignores ip addresses" do
     get 'http://127.0.0.1/apps'
-    last_request.env["rack.session.options"][:domain].should == nil
+    session_domain_from(last_request).should == nil
   end
   
   private
